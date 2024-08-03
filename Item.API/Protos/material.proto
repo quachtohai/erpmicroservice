@@ -1,0 +1,42 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Material.Grpc";
+
+package material;
+
+
+service MaterialProtoService {
+	
+	rpc GetMaterial (GetMaterialRequest) returns (MaterialModel);
+	rpc CreateMaterial (CreateMaterialRequest) returns (MaterialModel);
+	rpc UpdateMaterial (UpdateMaterialRequest) returns (MaterialModel);
+	rpc DeleteMaterial (DeleteMaterialRequest) returns (DeleteMaterialResponse);
+}
+
+message GetMaterialRequest {
+	string MateritalName = 1;
+}
+
+message MaterialModel {
+	int32 id = 1;
+	string materialCode = 2;
+	string materialName = 3;
+	string description = 4;
+	bool isActive = 5;
+}
+
+message CreateMaterialRequest {
+	MaterialModel material = 1;
+}
+
+message UpdateMaterialRequest {
+	MaterialModel material = 1;
+}
+
+message DeleteMaterialRequest {
+	string materialName = 1;
+}
+
+message DeleteMaterialResponse {
+	bool success = 1;
+}

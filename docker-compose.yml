@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:  
+
+  distributedcache:
+    image: redis  
+
+  messagebroker:
+    image: rabbitmq:management  
+
+
+
+
+
+
+

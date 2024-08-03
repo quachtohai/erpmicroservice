@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  
+  distributedcache:
+    container_name: distributedcache
+    restart: always
+    ports:
+      - "6379:6379" 
+
+  messagebroker:
+    container_name: messagebroker
+    hostname: messagebroker
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672" 
+
+  
