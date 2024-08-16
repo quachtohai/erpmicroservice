@@ -9,7 +9,7 @@ namespace Authentication.API.Endpoints
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapGet("/userinfo/list", async ([AsParameters] PaginationRequest request, ISender sender) =>
+            app.MapGet("/userinfo/list", async ([AsParameters] PaginationRequestWithDate request, ISender sender) =>
             {
                 var result = await sender.Send(new GetUserInfosQuery(request));
 

@@ -7,6 +7,7 @@ namespace ProductionPlanning.API.Data
     {
         public DbSet<BillOfMaterial> BillOfMaterials { get; set; } = default!;
         public DbSet<BillOfMaterialDetail> BillOfMaterialDetails { get; set; } = default!;
+        public DbSet<DailyProduction> DailyProductions { get; set; } = default!;
 
         public ProductionPlanningContext(DbContextOptions<ProductionPlanningContext> options)
         : base(options)

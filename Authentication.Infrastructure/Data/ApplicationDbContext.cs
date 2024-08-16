@@ -22,9 +22,13 @@ namespace Authentication.Infrastructure.Data
 
         public DbSet<UserInfoAction> UserInfoActions => Set<UserInfoAction>();
 
+        public DbSet<CompanyInfo> CompanyInfos => Set<CompanyInfo>();
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            builder.Entity<UserInfo>().HasQueryFilter(x => !x.IsDeleted);
+            builder.Entity<CompanyInfo>().HasQueryFilter(x => !x.IsDeleted);
             base.OnModelCreating(builder);
         }
     }

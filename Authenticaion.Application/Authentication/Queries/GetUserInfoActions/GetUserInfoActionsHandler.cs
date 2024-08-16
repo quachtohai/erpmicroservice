@@ -22,7 +22,7 @@ namespace Authenticaion.Application.Authentication.Queries.GetUserInfoActions
             var users = await dbContext.UserInfos
                            .Include(o => o.ItemActions)
                            .OrderByDescending(o => o.CreatedAt)
-                           .Skip(pageSize * pageIndex)
+                           .Skip(pageSize * (pageIndex-1))
                            .Take(pageSize)
                            .ToListAsync(cancellationToken);
 

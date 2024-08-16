@@ -20,17 +20,17 @@ namespace ProductionPlanning.API.ProductionPlanning.InsertMaterialInfo
 
         }
     }
-    public class InsertMaterialInfoHandler
-        (IPublishEndpoint publishEndpoint)
-    : ICommandHandler<MaterialInfoCommand, MaterialInfoResult>
-    {
-        public async Task<MaterialInfoResult> Handle(MaterialInfoCommand request, CancellationToken cancellationToken)
-        {
-            var eventMessage = request.MaterialInfoDto.Adapt<MaterialInfoEvent>();
-           
-            await publishEndpoint.Publish(eventMessage, cancellationToken);           
+    //public class InsertMaterialInfoHandler
+    //    (IPublishEndpoint publishEndpoint)
+    //: ICommandHandler<MaterialInfoCommand, MaterialInfoResult>
+    //{
+    //    public async Task<MaterialInfoResult> Handle(MaterialInfoCommand request, CancellationToken cancellationToken)
+    //    {
+    //        var eventMessage = request.MaterialInfoDto.Adapt<MaterialInfoEvent>();
 
-            return new MaterialInfoResult(true);
-        }
-    }
+    //        await publishEndpoint.Publish(eventMessage, cancellationToken);
+
+    //        return new MaterialInfoResult(true);
+    //    }
+    //}
 }

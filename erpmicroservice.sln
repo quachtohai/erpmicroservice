@@ -35,9 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlocks.Messaging", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{552EE8AF-F058-4475-BA82-7E92097A7659}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting", "Reporting\Reporting.csproj", "{285C4F5B-937C-4604-9620-BF6FBDCE485C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reporting", "Reporting\Reporting.csproj", "{285C4F5B-937C-4604-9620-BF6FBDCE485C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportingService", "ReportingService\ReportingService.csproj", "{56E828E0-6049-4417-BB01-874EDE1AD9A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportingService", "ReportingService\ReportingService.csproj", "{56E828E0-6049-4417-BB01-874EDE1AD9A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

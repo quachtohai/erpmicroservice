@@ -25,6 +25,16 @@
 			<Link>Protos\material.proto</Link>
 		</Protobuf>
 	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="..\Item.API\Protos\product.proto" GrpcServices="Client">
+			<Link>Protos\product.proto</Link>
+		</Protobuf>
+	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="..\Item.API\Protos\dictionaryinfo.proto" GrpcServices="Client">
+			<Link>Protos\dictionaryinfo.proto</Link>
+		</Protobuf>
+	</ItemGroup>
 
   <ItemGroup>
     <Folder Include="Exceptions\" />

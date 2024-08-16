@@ -33,13 +33,17 @@ namespace Authentication.Infrastructure.Data.Interceptors
                 if (entry.State == EntityState.Added)
                 {
                     entry.Entity.CreatedBy = "admin";
-                    entry.Entity.CreatedAt = DateTime.UtcNow;
+                    entry.Entity.CreatedAt = DateTime.Now;
+                    entry.Entity.IsActive = true;
+                    entry.Entity.IsDeleted = false;
                 }
 
                 if (entry.State == EntityState.Added || entry.State == EntityState.Modified || entry.HasChangedOwnedEntities())
                 {
                     entry.Entity.LastModifiedBy = "admin";
-                    entry.Entity.LastModified = DateTime.UtcNow;
+                    entry.Entity.LastModified = DateTime.Now;
+                    //entry.Entity.IsActive = true;
+                    //entry.Entity.IsDeleted = false;
                 }
             }
         }

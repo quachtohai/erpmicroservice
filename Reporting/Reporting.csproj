@@ -9,17 +9,39 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="DataSets\item.Designer.cs">
+    <Folder Include="DataSets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ReportingDataSet.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>item.xsd</DependentUpon>
+      <DependentUpon>ReportingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="ReportingDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReportingDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="ReportingDataSet2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReportingDataSet2.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="DataSets\item.xsd">
+    <None Update="ReportingDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>item.Designer.cs</LastGenOutput>
+      <LastGenOutput>ReportingDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ReportingDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportingDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ReportingDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportingDataSet2.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

@@ -14,7 +14,7 @@ namespace Authenticaion.Application.Dtos
         string FirstName,
         string LastName,
         string FullName,
-        string BirthDate,
+        DateTime? BirthDate,
         string Year,
         List<UserInfoDetailDto> UserInfoDetails,
         List<UserInfoMenuDto> UserInfoMenus,

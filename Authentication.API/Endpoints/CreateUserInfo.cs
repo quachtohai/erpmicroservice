@@ -11,7 +11,8 @@ namespace Authentication.API.Endpoints
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapPost("/userinfo/create", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Standard")]
+            //app.MapPost("/userinfo/create", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Standard")]
+            app.MapPost("/userinfo/create", 
             async (CreateUserInfoRequest request, ISender sender) =>
             {
                 var command = request.Adapt<CreateUserInfoCommand>();

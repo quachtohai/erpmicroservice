@@ -58,10 +58,7 @@ namespace Authentication.API.Middleware
                         default:
                             actionMapping = "all";
                             break;
-
-
                     }
-
                     actions.Add(new UserInfoActionDto(
                         userInfoAction.UserInfoId.Value, userInfoAction.Id.Value,
                         userInfoAction.ActionCode, userInfoAction.ModuleCode, actionMapping));

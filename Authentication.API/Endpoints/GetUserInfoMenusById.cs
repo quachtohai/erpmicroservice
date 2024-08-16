@@ -20,7 +20,7 @@ namespace Authentication.API.Endpoints
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .ProducesProblem(StatusCodes.Status404NotFound)
         .WithSummary("Get UserInfoMenus By Id")
-        .WithDescription("Get UserInfoMenus By Idr");
+        .WithDescription("Get UserInfoMenus By Id");
         }
     }
 }

@@ -1,10 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.ReportingServices.Interfaces;
+using ReportingService.Datas;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddMvc();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMemoryCache();
@@ -12,9 +15,13 @@ builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
-System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-var app = builder.Build();
 
+System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+builder.Services.AddDbContext<ReportingContext>(opts =>
+        opts.UseSqlServer(builder.Configuration.GetConnectionString("Database")));
+
+var app = builder.Build();
+app.UseMigration();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

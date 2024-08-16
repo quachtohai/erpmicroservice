@@ -11,11 +11,11 @@ namespace Authenticaion.Application.Data
         DbSet<Form> Forms { get; }
         DbSet<ActionInfo> ActionInfos { get; }
         DbSet<UserInfo> UserInfos { get; }
-       
+
         DbSet<UserInfoDetail> UserInfoDetails { get; }
         DbSet<UserInfoMenu> UserInfoMenus { get; }
         DbSet<UserInfoAction> UserInfoActions { get; }
-       
+        DbSet<CompanyInfo> CompanyInfos { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

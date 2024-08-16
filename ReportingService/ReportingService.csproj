@@ -8,11 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\Resources\materialInfo.rdlc" />
+    <Content Remove="wwwroot\Resources\assemblingDailyReport.rdlc" />
+    <Content Remove="wwwroot\Resources\coatingDailyReport.rdlc" />
+    <Content Remove="wwwroot\Resources\heattreatDailyReport.rdlc" />
+    <Content Remove="wwwroot\Resources\summaryDailyReport.rdlc" />
+    <Content Remove="wwwroot\Resources\weldingDailyReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
     <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.21" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
@@ -21,7 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Resources\materialInfo.rdlc" />
+    <None Include="wwwroot\Resources\assemblingDailyReport.rdlc" />
+    <None Include="wwwroot\Resources\coatingDailyReport.rdlc" />
+    <None Include="wwwroot\Resources\heattreatDailyReport.rdlc" />
+    <None Include="wwwroot\Resources\summaryDailyReport.rdlc" />
+    <None Include="wwwroot\Resources\weldingDailyReport.rdlc" />
   </ItemGroup>
 
 </Project>

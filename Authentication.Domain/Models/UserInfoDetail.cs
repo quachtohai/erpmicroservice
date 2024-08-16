@@ -15,11 +15,11 @@ namespace Authentication.Domain.Models
         public string AccountCode { get; set; } = default!;
         public string AccountName { get; set; } = default!;
         public string Password { get; set; } = default!;
-        public string FacultyDetail { get; set; } = default!;
+        public string FacultyDetail { get; set; } = default!;      
 
 
         public UserInfoDetail(UserInfoId userInfoId, string accountCode,
-            string accountName, string password, string facultyDetail)
+            string accountName, string password, string facultyDetail )
         {
             Id = UserInfoDetailId.Of(Guid.NewGuid());
             UserInfoId = userInfoId;

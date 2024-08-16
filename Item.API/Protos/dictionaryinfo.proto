@@ -1,0 +1,59 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "DictionaryInfo.Grpc";
+
+package dictionaryinfo;
+
+
+service DictionaryInfoProtoService {
+	
+	rpc GetDictionaryInfo (GetDictionaryInfoRequest) returns ( DictionaryInfoModelList);
+	rpc CreateDictionaryInfo (CreateDictionaryInfoRequest) returns (DictionaryInfoModel);
+	rpc UpdateDictionaryInfo (UpdateDictionaryInfoRequest) returns (DictionaryInfoModel);
+	rpc DeleteDictionaryInfo (DeleteDictionaryInfoRequest) returns (DeleteDictionaryInfoResponse);
+	rpc GetDictionaryInfoById (GetDictionaryInfoRequestById) returns (DictionaryInfoModel);
+}
+
+message GetDictionaryInfoRequest {
+	string DictionaryName = 1;
+}
+message GetDictionaryInfoRequestById{
+	int32 id = 1;
+}
+message GetDictionaryInfoByIdResponse{
+	DictionaryInfoModel dictionaryInfo = 1;
+}
+message DictionaryInfoModelList{
+	repeated DictionaryInfoModel dictionaryinfo =1;
+}
+
+message DictionaryInfoModel {
+	int32 id = 1;
+	string dictionaryInfoCode = 2;
+	string dictionaryInfoName = 3;
+	string description = 4;
+	string description2 = 5;
+	string description3 = 6;
+	string description4 = 7;
+	string description5 = 8;
+	string description6 = 9;
+	string process = 10;
+	bool isActive = 11;
+}
+
+
+message CreateDictionaryInfoRequest {
+	DictionaryInfoModel dictionaryInfo = 1;
+}
+
+message UpdateDictionaryInfoRequest {
+	DictionaryInfoModel dictionaryInfo = 1;
+}
+
+message DeleteDictionaryInfoRequest {
+	int32 id = 1;
+}
+
+message DeleteDictionaryInfoResponse {
+	bool success = 1;
+}

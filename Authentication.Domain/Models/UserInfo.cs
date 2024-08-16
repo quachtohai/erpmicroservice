@@ -19,12 +19,12 @@ namespace Authentication.Domain.Models
         public string FirstName { get; private set; } = default!;
         public string LastName { get; private set; } = default!;
         public string FullName { get; private set; } = default!;
-        public string BirthDate { get; private set; } = default!;
+        public DateTime? BirthDate { get; private set; } = default!;
         public string Year { get; private set; } = default!;
 
 
         public static UserInfo Create(UserInfoId id, string userInfoCode, string firstName, string lastName,
-            string fullName, string birthDate, string year)
+            string fullName, DateTime? birthDate, string year)
         {
             var userInfo = new UserInfo()
             {
@@ -35,6 +35,7 @@ namespace Authentication.Domain.Models
                 FullName = fullName,
                 BirthDate = birthDate,
                 Year = year
+               
             };
             return userInfo;
         }
@@ -64,7 +65,7 @@ namespace Authentication.Domain.Models
 
         }
         public void Update(string userInfoCode, string firstName, string lastName,
-            string fullName, string birthDate, string year)
+            string fullName, DateTime? birthDate, string year)
         {
             UserInfoCode = userInfoCode;
             FirstName = firstName;

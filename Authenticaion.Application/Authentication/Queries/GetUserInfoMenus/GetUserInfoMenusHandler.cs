@@ -24,7 +24,7 @@ namespace Authenticaion.Application.Authentication.Queries.GetUserInfoMenus
             var users = await dbContext.UserInfos
                            .Include(o => o.ItemMenus)
                            .OrderByDescending(o => o.CreatedAt)
-                           .Skip(pageSize * pageIndex)
+                           .Skip(pageSize * (pageIndex - 1))
                            .Take(pageSize)
                            .ToListAsync(cancellationToken);
 

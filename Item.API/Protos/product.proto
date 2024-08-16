@@ -1,0 +1,62 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Product.Grpc";
+
+package product;
+
+
+service ProductProtoService {
+	
+	rpc GetProduct (GetProductRequest) returns (ProductModelList);
+	rpc CreateProduct (CreateProductRequest) returns (ProductModel);
+	rpc UpdateProduct (UpdateProductRequest) returns (ProductModel);
+	rpc DeleteProduct (DeleteProductRequest) returns (DeleteProductResponse);
+	rpc GetProductById (GetProductRequestById) returns (ProductModel);
+	rpc GetProductByName (GetProductRequestByName) returns (ProductModel);
+}
+
+message GetProductRequest {
+	string ProductName = 1;
+}
+
+message GetProductRequestById{
+	int32 id = 1;
+}
+
+message GetProductRequestByName{
+	string name = 1;
+}
+
+message ProductModel {
+	int32 id = 1;
+	string ProductCode01 = 2;
+	string ProductCode02 = 3;
+	string productName = 4;
+	string description = 5;
+	string description2 = 6;
+	string description3 = 7;
+	string description4 = 8;
+	string description5 = 9;
+	string description6 = 10;
+	string process = 11;
+	bool isActive = 12;
+}
+message ProductModelList{
+	repeated ProductModel product = 1;
+}
+
+message CreateProductRequest {
+	ProductModel product = 1;
+}
+
+message UpdateProductRequest {
+	ProductModel product = 1;
+}
+
+message DeleteProductRequest {
+	int32 id = 1;
+}
+
+message DeleteProductResponse {
+	bool success = 1;
+}
